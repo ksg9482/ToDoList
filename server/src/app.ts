@@ -1,4 +1,5 @@
 import express = require('express')
+const userRouter = require('./routers/user')
 
 
 function runServer(){
@@ -8,6 +9,8 @@ function runServer(){
     app.get('/',(req, res)=>{
         res.end('success')
     })
+
+    app.use('/user', userRouter)
 
     app.listen(PORT, ()=>{
         console.log(`http://localhost:${PORT}`)
