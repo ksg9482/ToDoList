@@ -1,0 +1,21 @@
+NODE_ENV 환경변수 설정
+
+윈도우: set 사용
+"start":"set NODE_ENV=production&& node build/app.js"
+리눅스: export 사용
+"start":"export NODE_ENV=production&& node build/app.js"
+
+NODE_ENV 값을 이용한 모드설정
+
+production 모드:
+파일 캐싱, 에러 메시지 감추기 등 배포의 적합한 환경 설정
+
+development 모드:
+파일 캐싱 방지, 디버그를 위한 상세한 에러 메시지 보이기 등
+개발에 도움을 줄 수 있는 환경으로 설정
+
+"build":"rd /s ./build && tsc"
+build 할 때 이전에 빌드된 build 폴더를 삭제하고 다시 빌드
+
+rd /s 는 윈도우 명령어
+rm -rf 는 리눅스, 맥 명령어
