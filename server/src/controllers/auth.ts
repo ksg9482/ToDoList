@@ -1,9 +1,21 @@
 module.exports = {
-    userInfo: async (req:any, res:any) => {
+    signup: async (req:any, res:any) => {
         res.json('userInfo')
     },
 
-    updateUserInfo: async (req:any, res:any) => {
+    signout: async (req:any, res:any) => {
         res.json('userInfo')
-    }
+    },
+
+    login: async (req:any, res:any) => {
+        res.json('userInfo')
+    },
+
+    logout: async (req:any, res:any) => {
+        res.json('userInfo')
+    },
+
+    OAuth: async (req:any, res:any) => {
+        res.json('userInfo')
+    },
 }

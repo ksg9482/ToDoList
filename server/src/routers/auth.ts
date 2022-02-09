@@ -7,7 +7,7 @@ const authController = require("../controllers/auth")
 
 // 정보수정, 내정보, 내 실행현황
 
-router.get('/',userController.userInfo)
+router.get('/',authController)
 
 
 module.exports = router

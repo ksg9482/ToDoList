@@ -3,7 +3,11 @@ module.exports = {
         res.json('userInfo')
     },
 
-    updateUserInfo: async (req:any, res:any) => {
+    userPatch: async (req:any, res:any) => {
+        res.json('userInfo')
+    },
+
+    userDelete: async (req:any, res:any) => {
         res.json('userInfo')
     }
 }
