@@ -1,5 +1,7 @@
 import express = require('express')
 const userRouter = require('./routers/user')
+const authRouter = require('./routers/auth')
+const todolistRouter = require('./routers/todolist')
 
 
 function runServer(){
@@ -11,6 +13,8 @@ function runServer(){
     })
 
     app.use('/user', userRouter)
+    app.use('/auth', authRouter)
+    app.use('/todolist', todolistRouter)
 
     app.listen(PORT, ()=>{
         console.log(`http://localhost:${PORT}`)
