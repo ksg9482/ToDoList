@@ -1,12 +1,11 @@
 require('dotenv').config()
-import { verify } from 'crypto'
-import { sign } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 const DOMAIN = process.env.DOMAIN || 'localhost'
 const ACCESSTOKEN = process.env.ACCESS_SECRET || 'todolist_access'
 
 module.exports = {
     generateAccessToken: (data: any) => {
-        return sign(data, ACCESSTOKEN, { expiresIn: '30m' })
+        return jwt.sign(data, ACCESSTOKEN, { expiresIn: '30m' })
     },
     sendAccessToken: (res: any, token: any, userData: any) => {
         res.status(200)
@@ -28,7 +27,7 @@ module.exports = {
         }
         const token = authorization.split(' ')[1]
         try {
-            //타입스크립트 verify 인지못함?
+            return jwt.verify(token, ACCESSTOKEN)
         } catch (error) {
             return console.log(error)
         }

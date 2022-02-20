@@ -1,5 +1,5 @@
 //import { userInfo } from "os"
-const user = require('../models')
+const user = require('../database/models')
 
 module.exports = {
     signup: async (req: any, res: any) => {
